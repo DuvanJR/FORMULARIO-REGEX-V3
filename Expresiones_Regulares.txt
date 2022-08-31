@@ -1,0 +1,111 @@
+Coincidencias Basicas
+.       - Cualquier Caracter, excepto nueva linea
+\d      - Cualquier Digitos (0-9)
+\D      - No es un Digito (0-9)
+\w      - Caracter de Palabra (a-z, A-Z, 0-9, _)
+\W      - No es un Caracter de Palabra.
+\s      - Espacios de cualquier tipo. (espacio, tab, nueva linea)
+\S      - No es un Espacio, Tab o nueva linea.
+
+Limites
+\b      - Limite de Palabra
+\B      - No es un Limite de Palabra
+^       - Inicio de una cadena de texto
+$       - Final de una cadena de texto
+
+Cuantificadores:
+*       - 0 o Más
++       - 1 o Más
+?       - 0 o Uno
+{3}     - Numero Exacto
+{3,4}   - Rango de Numeros (Minimo, Maximo)
+
+Conjuntos de Caracteres
+[]      - Caracteres dentro de los brackets
+[^ ]    - Caracteres que NO ESTAN dentro de los brackets
+
+Grupos
+( )     - Grupo
+|       - Uno u otro
+
+
+[+]\d{1,2}\s\d{3}\s\d{3}\s\d{3}
+
+
+
+
+
+PAGINAS IMPORTANTES GUIA PARA SEGUIR TRABAJANDO
+
+1: https://www.youtube.com/watch?v=FozXpoYu4_E
+
+2 ARRAY EN JAVASCRIPT: https://www.youtube.com/watch?v=wJWjJWs81g4
+OTRA IGUAL 2.1: https://www.youtube.com/watch?v=goCeqBn15Ls
+
+3: https://www.youtube.com/watch?v=9pzAT3aDr1I
+
+4: https://www.youtube.com/watch?v=meSUMeNQk1A&t=754s
+
+5: https://regexr.com/6ssmm
+
+6: http://estilow3b.com/ejemplos-comunes-de-expresiones-regulares-javascript/#1_Validacion_Solo_Numeros
+
+7: https://www.um.es/docencia/barzana/DAWEB/2017-18/daweb-tema-19-javascript-2-expresiones-regulares.html
+
+8: https://code.tutsplus.com/es/tutorials/8-regular-expressions-you-should-know--net-6149
+
+9: https://hectorip.github.io/Eloquent-JavaScript-ES-online/chapters/09_regexp.html
+
+10: https://www.youtube.com/watch?v=noVsVwBNi8c
+
+
+
+
+<script>
+        function capturar() {
+            //console.log("capturado");
+            function Persona(nombre, apellido, codigo, fecha, direccion, telefono, celular, email) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.codigo = codigo;
+                this.fecha = fecha;
+                this.direccion = apellido;
+                this.telefono = telefono;
+                this.celular = celular;
+                this.email = email;
+            }
+            var nombreCapturar = document.getElementById("nombre").value;
+            //console.log(nombreCapturar);
+            var apellidoCapturar = document.getElementById("apellido").value;
+            //console.log(apellidoCapturar);
+            var codigoCapturar = document.getElementById("codigo").value;
+            //
+            var fechaCapturar = document.getElementById("fecha").value;
+            //
+            var direccionCapturar = document.getElementById("direccion").value;
+            //
+            var telefonoCapturar = document.getElementById("telefono").value;
+            //
+            var celularCapturar = document.getElementById("celular").value;
+            //
+            var emailCapturar = document.getElementById("email").value;
+            //
+
+
+
+
+            nuevoSujeto = new Persona(nombreCapturar, apellidoCapturar, codigoCapturar, fechaCapturar, direccionCapturar, telefonoCapturar, celularCapturar, emailCapturar);
+            console.log(nuevoSujeto);
+            agregar();
+        }
+
+        var baseDatos = [];
+
+        function agregar() {
+            baseDatos.push(nuevoSujeto);
+            console.log(baseDatos);
+            document.getElementById("tabla").innerHTML += '<tbody> <td>' + nuevoSujeto.nombre + '</td> <td>' + nuevoSujeto.apellido + '</td> <td>' + nuevoSujeto.codigo +
+                '</td> <td>' + nuevoSujeto.fecha + '</td> <td>' + nuevoSujeto.direccion + '</td> <td>' + nuevoSujeto.telefono + '</td> <td>' + nuevoSujeto.celular +
+                '</td> <td>' + nuevoSujeto.email + '</td> </tbody>';
+        };
+    </script>
